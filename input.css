@@ -3,21 +3,13 @@
 @tailwind utilities;
 
 body {
-font-family: 'bnazanb';
+    font-family:'Shabnam', sans-serif;
+   
 }  
 
-
-.cool-link::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: white;
-    transition: width .3s;
-}
-
-.cool-link:hover::after {
-    width: 100%;
+h1{
+    font-weight: bold;
+   font-style: bold; 
 }
 
 
