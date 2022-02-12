@@ -1,5 +1,5 @@
     <!DOCTYPE html>
-    <html >
+    <html class="scroll-smooth">
     <head>
     <meta charset="utf-8">
     <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="font.css">
 
     </head>
-    <body>
+    <body >
       <div x-data="{toggleActive : $persist(false)}" :class=" toggleActive ? 'dark' : '' ">
         <nav class="drop-shadow-lg z-50 sticky text-center dark:bg-white dark:text-black bg-black" x-data="{ show: false }" >
           <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -43,54 +43,43 @@
                 </div>
               </div>
               <div class="flex-1 flex items-center sm:items-stretch sm:justify-start">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="https://babaeee.ir/">
-                        <img class="block lg:hidden h-8 w-auto" src="https://babaeee.ir/sources/op-img/logo.png" alt="babaeee">
-                        <img class="hidden lg:block h-8 w-auto" src="https://babaeee.ir/sources/op-img/logo.png" alt="babaeee">
-                    </a>
+                <div class="flex items-center invisible sm:visible text-white justify-center mr-auto ml-2 sm:mr-0 sm:ml-2 top-5 left-0">
+                    <div class="flex justify-end items-center space-x-2 mx-auto relative" >
+                        <span class="text-xs font-extralight dark:text-gray-400 text-white">روشن </span>
+                        <div>
+                          <input type="checkbox" name="" id="checkbox" class="hidden" @click="toggleActive = !toggleActive" />
+                          <label for="checkbox" class="cursor-pointer" >
+                            <div class="w-9 h-5 flex items-center rounded-full p2 dark:bg-black bg-gray-300 ">
+                              <div class="w-4 h-4 bg-white switch-ball rounded-full shadow duration-300" :class=" toggleActive ? 'translate-x-[18px]' : 'translate-x-[2px]' " ></div>
+                            </div>
+                          </label>
+                        </div>
+                        <span class="text-xs font-semibold dark:text-black text-gray-400">تیره</span>
+                    </div> 
                 </div>
                 <div class="hidden sm:block w-auto mx-auto">
-                  <div class="flex justify-center text-xs font-semibold lg:space-x-2 sm:space-x-1 sm:text-xs text-gray-300">
+                  
+                  <div class="flex justify-center text-xs font-semibold lg:space-x-2 sm:space-x-1 sm:text-xs text-gray-300" id="wrapper" >
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="#" class="px-2 py-3 hover:text-white hover:border-b hover:border-white dark:text-gray-500 dark:hover:text-black dark:hover:border-b dark:hover:border-black ">المپیاد  کامپیوتر</a>
+                    <a href="#" class="px-2 py-3 hover:text-white dark:text-gray-500 dark:hover:text-black transition ease-in-out hover:scale-110 duration-300">المپیاد  کامپیوتر</a>
 
-                    <a href="#" class="px-2 py-3 hover:text-white hover:border-b hover:border-white dark:text-gray-500 dark:hover:text-black dark:hover:border-b dark:hover:border-black ">المپیاد ریاضی</a>
+                    <a href="#" class="px-2 py-3 hover:text-white dark:text-gray-500 dark:hover:text-black transition ease-in-out hover:scale-110 duration-300">المپیاد ریاضی</a>
 
-                    <a href="#" class="text-sm px-2 py-2 border-b dark:text-black dark:border-black text-white border-white">المپیاد فیزیک</a>
+                    <a href="#" class="text-sm px-2 py-2 border-b dark:text-black dark:border-black text-white border-white ">المپیاد فیزیک</a>
 
-                    <a href="#" class="px-2 py-3 hover:text-white hover:border-b hover:border-white dark:text-gray-500 dark:hover:text-black dark:hover:border-b dark:hover:border-black ">خانه</a>
+                    <a href="#" class="px-2 py-3 hover:text-white dark:text-gray-500 dark:hover:text-black transition ease-in-out hover:scale-110 duration-300">خانه</a>
                   </div>
                 </div>
 
                 <div
                   class="flex items-center text-white justify-center ml-auto mr-2 sm:ml-0 sm:mr-2 top-5 right-0">
-                  
-                  <div class="flex justify-end items-center space-x-2 mx-auto relative" >
-                    <span class="text-xs font-extralight dark:text-gray-400 text-white">روشن </span>
-                    <div>
-                      <input type="checkbox" name="" id="checkbox" class="hidden" @click="toggleActive = !toggleActive"/>
-                      <label for="checkbox" class="cursor-pointer" >
-                        <div class="w-9 h-5 flex items-center rounded-full p2 dark:bg-black bg-gray-300 ">
-                          <div class="w-4 h-4 bg-white switch-ball rounded-full shadow" ></div>
-                        </div>
-                      </label>
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="https://babaeee.ir/">
+                            <img class="block h-8 w-auto" src="https://babaeee.ir/sources/op-img/logo.png" alt="babaeee">
+                        </a>
                     </div>
-                    <span class="text-xs font-semibold dark:text-black text-gray-400">تیره</span>
                   
-                  
-                  </div>
-                  <style>
-                    #checkbox:checked + label .switch-ball{
-                      background-color: white;
-                      transform: translateX(18px);
-                      transition: transform 0.3s linear;
-                    }
-                    #checkbox + label .switch-ball{
-                      background-color: white ;
-                      transform: translateX(2px);
-                      transition: transform 0.3s linear;
-                    }
-                  </style>            
+                </div>        
                 </div>
                 
               </div>
@@ -122,7 +111,7 @@
                   x-on:scroll.window.throttle.50ms="onScroll()" class=" fixed pb-2 pt-20 px-8 left-0 bottom-0 top-0 hidden xl:block w-48 w-64 overflow-y-auto dark:bg-zinc-900 dark:text-white bg-gray-200"  hover-scrollbar dir="rtl" lang="ar">
                   <ul class="space-y-4 text-gray-500">
                       <template x-for="heading in headings">
-                          <li class="text-sm" :class="if (heading.tagName.toLowerCase() === 'h1') { return 'mr-2' } else if (heading.tagName.toLowerCase() === 'h2') { return 'mr-8' }" >
+                          <li class="text-sm" :class="if (heading.tagName.toLowerCase() === 'h2') { return 'mr-2' } else if (heading.tagName.toLowerCase() === 'h3') { return 'mr-8' }" >
                               <a
                                   :href="'#'+heading.id"
                                   :class="toggleActive && visibleHeadingId == heading.id && 'text-white' || visibleHeadingId == heading.id && 'font-medium text-gray-900'"
@@ -141,34 +130,34 @@
 
                 </div>
                 
-                <h1 class="font-extrabold text-3xl pt-10" >المپیاد فیزیک چیست؟</h1>
+                <h2 class="font-extrabold text-3xl pt-10" >المپیاد فیزیک چیست؟</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <h1 class="font-extrabold text-3xl pt-10" >مراحل</h1>
-                <h2 class="font-medium text-3xl pt-6" >مرحله اول</h2>
+                <h2 class="font-extrabold text-3xl pt-10" >مراحل</h2>
+                <h3 class="font-medium text-3xl pt-6" >مرحله اول</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <h2 class="font-medium text-3xl pt-6">مرحله دوم</h2>
+                <h3 class="font-medium text-3xl pt-6">مرحله دوم</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 </p>
-                <button class="bg-black text-gray-200 hover:text-white rounded-md p-2 ml-auto">
-                    <p class="p-0.5">آموزش مرحله دوم ></p>
+                <button class="bg-black dark:bg-white dark:text-black dark:hover:text-black transition ease-in-out hover:scale-110 duration-300 text-gray-200 hover:text-white rounded-md p-2 ml-auto">
+                    <p class="p-0.5">آموزش مرحله دوم</p>
                 </button>
-                <h2 class="font-medium text-3xl pt-6">مرحله سوم</h2>
+                <h3 class="font-medium text-3xl pt-6">مرحله سوم</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat.</p>
-                <h2 class="font-medium text-3xl pt-6" >مرحله چهارم (دوره تابستانه)</h2>
+                <h3 class="font-medium text-3xl pt-6" >مرحله چهارم (دوره تابستانه)</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -184,7 +173,7 @@
 
                   init() {
                       // Grab all the headings inside the main container.
-                      this.headings = document.querySelectorAll('h1, h2')
+                      this.headings = document.querySelectorAll('h2, h3')
 
                       this.assignHeadingIds()
 
