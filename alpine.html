@@ -45,16 +45,16 @@
               <div class="flex-1 flex items-center sm:items-stretch sm:justify-start">
                 <div class="flex items-center invisible sm:visible text-white justify-center mr-auto ml-2 sm:mr-0 sm:ml-2 top-5 left-0">
                     <div class="flex justify-end items-center space-x-2 mx-auto relative" >
-                        <span class="text-xs font-extralight dark:text-gray-400 text-white">روشن </span>
+                        <span class="text-xs font-extralight dark:text-gray-400 scale-110 dark:scale-90 text-white duration-300">روشن </span>
                         <div>
                           <input type="checkbox" name="" id="checkbox" class="hidden" @click="toggleActive = !toggleActive" />
                           <label for="checkbox" class="cursor-pointer" >
                             <div class="w-9 h-5 flex items-center rounded-full p2 dark:bg-black bg-gray-300 ">
-                              <div class="w-4 h-4 bg-white switch-ball rounded-full shadow duration-300" :class=" toggleActive ? 'translate-x-[18px]' : 'translate-x-[2px]' " ></div>
+                              <div class="w-4 h-4 bg-white switch-ball rounded-full scale-90 shadow duration-300" :class=" toggleActive ? 'translate-x-[18px]' : 'translate-x-[2px]' " ></div>
                             </div>
                           </label>
                         </div>
-                        <span class="text-xs font-semibold dark:text-black text-gray-400">تیره</span>
+                        <span class="text-xs font-semibold dark:text-black dark:scale-110 transition text-gray-400">تیره</span>
                     </div> 
                 </div>
                 <div class="hidden sm:block w-auto mx-auto">
