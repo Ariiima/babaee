@@ -11,8 +11,8 @@
     </head>
     <body >
       <div x-data="{toggleActive : $persist(false)}" :class=" toggleActive ? 'dark' : '' ">
-        <nav class="drop-shadow-lg z-50 sticky text-center dark:bg-white dark:text-black bg-black" x-data="{ show: false }" >
-          <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <nav class="drop-shadow-lg z-50 sticky text-center  dark:bg-white dark:text-black bg-black" x-data="{ show: false }" >
+          <div class="max-w-7xl mx-auto px-2 sm:px-6">
             <div class="relative flex items-center justify-between h-16">
               <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <!-- Mobile menu button-->
@@ -43,18 +43,18 @@
                 </div>
               </div>
               <div class="flex-1 flex items-center sm:items-stretch sm:justify-start">
-                <div class="flex items-center invisible sm:visible text-white justify-center mr-auto ml-2 sm:mr-0 sm:ml-2 top-5 left-0">
+                <div class="flex items-center invisible sm:visible justify-center mr-auto ml-2 sm:mr-0 sm:ml-0 top-5 left-0">
                     <div class="flex justify-end items-center space-x-2 mx-auto relative" >
-                        <span class="text-xs font-extralight dark:text-gray-400 scale-110 dark:scale-90 text-white duration-300">روشن </span>
+                        <span class="text-xs text-white font-extralight transition dark:text-gray-400 scale-110 dark:scale-100 text-white duration-300 subpixel-antialiased">روشن </span>
                         <div>
                           <input type="checkbox" name="" id="checkbox" class="hidden" @click="toggleActive = !toggleActive" />
                           <label for="checkbox" class="cursor-pointer" >
-                            <div class="w-9 h-5 flex items-center rounded-full p2 dark:bg-black bg-gray-300 ">
-                              <div class="w-4 h-4 bg-white switch-ball rounded-full scale-90 shadow duration-300" :class=" toggleActive ? 'translate-x-[18px]' : 'translate-x-[2px]' " ></div>
+                            <div class="w-11 h-4 flex items-center rounded-full p2 dark:bg-black transition duration-300 bg-gray-300 ">
+                              <div class="w-4 h-3 bg-white switch-ball rounded-full shadow duration-300" :class=" toggleActive ? 'translate-x-[26px]' : 'translate-x-[2px]' " ></div>
                             </div>
                           </label>
                         </div>
-                        <span class="text-xs font-semibold dark:text-black dark:scale-110 transition text-gray-400">تیره</span>
+                        <span class="text-xs font-semibold dark:text-black scale-100 dark:scale-110 transition subpixel-antialiased text-gray-400 duration-300">تیره</span>
                     </div> 
                 </div>
                 <div class="hidden sm:block w-auto mx-auto">
@@ -72,10 +72,11 @@
                 </div>
 
                 <div
-                  class="flex items-center text-white justify-center ml-auto mr-2 sm:ml-0 sm:mr-2 top-5 right-0">
+                  class="flex items-center text-white justify-center ml-auto mr-2 sm:ml-0 top-5 right-0">
                     <div class="flex-shrink-0 flex items-center">
                         <a href="https://babaeee.ir/">
-                            <img class="block h-8 w-auto" src="https://babaeee.ir/sources/op-img/logo.png" alt="babaeee">
+                            <img class="visible dark:invisible block fixed h-12 w-auto top-2 right-8" src="res/babaeeW.svg" alt="babaeee">
+                            <img class="invisible dark:visible block fixed top-2 right-8 h-12 w-auto" src="res/babaee.png">
                         </a>
                     </div>
                   
@@ -108,13 +109,14 @@
         </nav>
         <div class="flex">
             <aside x-data="visibleNavHighlighter"
-                  x-on:scroll.window.throttle.50ms="onScroll()" class=" fixed pb-2 pt-20 px-8 left-0 bottom-0 top-0 hidden xl:block w-48 w-64 overflow-y-auto dark:bg-zinc-900 dark:text-white bg-gray-200"  hover-scrollbar dir="rtl" lang="ar">
-                  <ul class="space-y-4 text-gray-500">
+                  x-on:scroll.window.throttle.50ms="onScroll()" class=" fixed pb-2 pt-20 px-8 left-0 bottom-0 top-0 hidden xl:block w-48 w-64 overflow-y-auto dark:bg-zinc-900 dark:text-white bg-gray-200 transition delay-50 linear duration-300"  hover-scrollbar dir="rtl" lang="ar">
+                  <ul class="space-y-4 text-gray-500 pt-10">
                       <template x-for="heading in headings">
-                          <li class="text-sm" :class="if (heading.tagName.toLowerCase() === 'h2') { return 'mr-2' } else if (heading.tagName.toLowerCase() === 'h3') { return 'mr-8' }" >
+                          <li class="text-sm" :class="if (heading.tagName.toLowerCase() === 'h2') { return 'pr-2' } else if (heading.tagName.toLowerCase() === 'h3') { return 'pr-8' }" >
                               <a
                                   :href="'#'+heading.id"
                                   :class="toggleActive && visibleHeadingId == heading.id && 'text-white' || visibleHeadingId == heading.id && 'font-medium text-gray-900'"
+
                                   x-text=" '● ' + heading.innerText"+
                               ></a>
                           </li>
@@ -123,9 +125,9 @@
             </aside>
             <div class="left-0 bottom-0 xl:block w-64 hidden mr-40">
             </div>
-            <section class="bg-white flex flex-col space-y-5 px-5 py-20 lg:px-60 md:px-40 dark:bg-black dark:text-white" dir="rtl" lang="ar">
+            <section class="bg-white flex flex-col space-y-5 px-5 py-20 lg:px-60 md:px-40 dark:bg-black transition dark:text-white duration-300 ease-in-out" dir="rtl" lang="ar">
                 <div class="text-center">
-                        <span class="font-extrabold text-4xl relative top-5 px-8 bg-white dark:bg-black" >المپیاد فیزیک</span>
+                        <span class="font-extrabold text-4xl relative top-5 px-8 bg-white dark:bg-black transition delay-160 duration-300" >المپیاد فیزیک</span>
                         <div class="h-px bg-gray-600 dark:bg-white"></div> 
 
                 </div>
