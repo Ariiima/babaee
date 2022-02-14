@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./alpine.html"],
+  content: ["./index.html"],
   darkMode: 'class',
   theme: {
     extend: {},
