@@ -112,10 +112,10 @@
           <div class="h-px bg-[#80808080]"></div> 
 
         </div>
-        <div class="flex">
+        <div class="flex mx-[12rem]">
           <!-- bg-neutral-300 -->
             <aside x-data="visibleNavHighlighter"
-                  x-on:scroll.window.throttle.50ms="onScroll()" class=" xl:block w-48 w-64 bg-transparent transition delay-50 ml-12 mt-12 linear duration-300 rounded"  hover-scrollbar dir="rtl" lang="ar">
+                  x-on:scroll.window.throttle.50ms="onScroll()" class=" xl:block bg-transparent transition delay-50 mt-12 linear duration-300 rounded"  hover-scrollbar dir="rtl" lang="ar">
                   <ul class="space-y-4 text-[#808080] sticky top-[8rem] ">
                       <template x-for="heading in headings" >
                           <li class="text-sm " :class="if (heading.tagName.toLowerCase() === 'h2') { return 'pr-1' } else if (heading.tagName.toLowerCase() === 'h3') { return 'pr-7' }"
@@ -130,7 +130,7 @@
                       </template>
                   </ul> 
             </aside>
-            <section class="flex flex-col justify-self-start space-y-5  transition dark:text-[#E5E5E5] duration-300 " dir="rtl" lang="ar">
+            <section class="flex flex-col justify-items-start flex-1 space-y-5  transition dark:text-[#E5E5E5] duration-300 " dir="rtl" lang="ar">
                 
                 <h2 class="font-extrabold text-3xl pt-10" >المپیاد فیزیک چیست؟</h2>
                 <p>نزدیک به چهل سال از نخستین مسابقات المپیاد کشوری میگذرد. با وجود محبوبیت یافتن این مسابقات در میان تمام اقشار دانش آموزی، همچنان کمبود منابع معتبر آموزشی خصوصا درمیان طبقات محروم جامعه به چشم می آید. لذا، اکثریت مدال آوران المپیاد در دهه های گذشته را دانش آموزان استان های بزرگ کشوری تشکیل داده اند. در این راستا، گروه ببعییی تلاش کرده است تا با در اختیار قرار دادن آموزش های رایگان، دانش آموزان دبیرستانی از تمامی اقشار اجتماعی و اقتصادی را با مراجع به روز المپیادهای کشوری آشنا سازد. گروه ببعییی با فراهم کردن فیلم و انیمیشن های آموزشی و مشاوره ای، بخش های تعاملی و تمرین های درسی سعی براین دارد که شعله اشتیاق یادگیری را درمیان دانش آموزان مستعد برافروزد، از پیچیدگی های مسیر المپیاد بکاهد و تنوع فرهنگی را در جامعه المپیاد توسعه دهد.</p>

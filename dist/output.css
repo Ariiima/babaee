@@ -601,6 +601,31 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto;
 }
 
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.mx-16 {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.mx-\[10rem\] {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.mx-\[12rem\] {
+  margin-left: 12rem;
+  margin-right: 12rem;
+}
+
 .mr-auto {
   margin-right: auto;
 }
@@ -639,6 +664,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ml-20 {
   margin-left: 5rem;
+}
+
+.mr-20 {
+  margin-right: 5rem;
 }
 
 .block {
@@ -827,6 +856,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-items-start {
   justify-items: start;
+}
+
+.justify-items-end {
+  justify-items: end;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
