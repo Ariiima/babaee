@@ -11,5 +11,8 @@ h1{
     font-weight: bold;
    font-style: bold; 
 }
+p{
+    max-width: 60ch;
+}
 
 

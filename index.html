@@ -8,10 +8,11 @@
     <link href="./dist/output.css" type="text/css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font@v5.0.0/dist/font-face.css" rel="stylesheet" type="text/css" />  
 
+
     </head>
-    <body >
-      <div x-data="{toggleActive : $persist(false)}">
-        <nav class="drop-shadow-lg z-50 sticky text-center  dark:bg-white dark:text-black  bg-stone-900" x-data="{ show: false }" >
+    <body  x-data="{toggleActive : $persist(false)} " :class=" toggleActive ? 'dark' : '' " >
+      <div class="dark:bg-[#1A1A1A] bg-[#E5E5E5] pb-[20rem] transition duration-300">
+        <nav class="z-50 sticky text-center bg-[#353535]" x-data="{ show: false }" >
           <div class="center w-auto mx-auto px-2 sm:px-6 sm:pl-10 ">
             <div class="relative flex items-center justify-between h-16">
               <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -45,7 +46,7 @@
               <div class="flex-1 flex items-center sm:items-stretch sm:justify-start">
                 <div class="flex items-center justify-center mr-auto ml-12 sm:mr-0 sm:ml-0 top-5 left-0">
                     <div class="flex justify-end items-center space-x-2 mx-auto relative" :class=" toggleActive ? 'dark' : '' ">
-                        <span class="text-xs text-white transition dark:text-gray-200 scale-110 dark:scale-100 text-white duration-300 subpixel-antialiased">روشن </span>
+                        <span class="text-xs text-[#E5E5E5] transition dark:text-gray-200 scale-110 dark:scale-100 duration-300 subpixel-antialiased">روشن </span>
                         <div>
                           <input type="checkbox" name="" id="checkbox" class="hidden" @click="toggleActive = !toggleActive" />
                           <label for="checkbox" class="cursor-pointer" >
@@ -54,20 +55,20 @@
                             </div>
                           </label>
                         </div>
-                        <span class="text-xs font-semibold dark:text-white scale-100 dark:scale-110 transition subpixel-antialiased text-gray-400 duration-300">تیره</span>
+                        <span class="text-xs font-semibold dark:text-white scale-100 dark:scale-110 transition subpixel-antialiased text-[#808080] duration-300">تیره</span>
                     </div> 
                 </div>
-                <div class="hidden sm:block w-auto pt-1 mx-auto pr-4">
+                <div class="hidden sm:block w-auto py-1 h-12 mx-auto pr-4">
                   
-                  <div class="flex justify-center text-xs font-semibold lg:space-x-2 sm:space-x-1 sm:text-xs text-gray-300" id="wrapper" >
+                  <div class="flex justify-center text-xs font-semibold lg:space-x-2 sm:space-x-1 sm:text-xs text-[#E5E5E5]" id="wrapper" x-data="{ mouseOver: false }" >
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="#" class="px-2 py-3 hover:text-white dark:text-gray-500 dark:hover:text-black transition ease-in-out hover:scale-110 duration-300">المپیاد  کامپیوتر</a>
+                    <a href="#" class="px-2 py-3 hover:text-white transition ease-in-out hover:scale-110 duration-300" @mouseover=" mouseOver = true " @mouseout=" mouseOver = false " :class=" mouseOver && 'text-[#808080]'">المپیاد  کامپیوتر</a>
 
-                    <a href="#" class="px-2 py-3 hover:text-white dark:text-gray-500 dark:hover:text-black transition ease-in-out hover:scale-110 duration-300">المپیاد ریاضی</a>
+                    <a href="#" class="px-2 py-3 hover:text-white transition ease-in-out hover:scale-110 duration-300" @mouseover=" mouseOver = true " @mouseout=" mouseOver = false " :class=" mouseOver && 'text-[#808080]'">المپیاد ریاضی</a>
 
-                    <a href="#" class="text-sm px-2 py-2 border-b dark:text-black dark:border-black text-white border-gray-300 ">المپیاد فیزیک</a>
+                    <a href="#" class="text-sm px-2 py-3 pb-[18px] border-b-2 border-[#ff5c5d] " >المپیاد فیزیک</a>
 
-                    <a href="#" class="px-2 py-3 hover:text-white dark:text-gray-500 dark:hover:text-black transition ease-in-out hover:scale-110 duration-300">خانه</a>
+                    <a href="#" class="px-2 py-3 hover:text-white transition ease-in-out hover:scale-110 duration-300" @mouseover=" mouseOver = true " @mouseout=" mouseOver = false " :class=" mouseOver && 'text-[#808080]'">خانه</a>
                   </div>
                 </div>
 
@@ -75,8 +76,7 @@
                   class="flex items-center text-white justify-center ml-auto mr-2 sm:ml-0 top-5 right-0">
                     <div class="flex-shrink-0 flex items-center">
                         <a href="https://babaeee.ir/">
-                            <img class="visible dark:invisible block rounded-full h-12 w-auto " src="res/logoColored.jpg" alt="babaeee">
-                            <img class="invisible dark:visible block fixed top-2 right-8 h-12 w-auto" src="res/babaee.png">
+                            <img class="visible block rounded-full h-9 w-auto " src="res/logoColored.jpg" alt="babaeee">
                         </a>
                     </div>
                   
@@ -107,32 +107,30 @@
 
           
         </nav>
-        <div class="flex" :class=" toggleActive ? 'dark' : '' ">
+        <div class="text-center mt-14 px-20 pb-10 max-w-7xl mx-auto">
+          <span class="font-extrabold text-4xl transition relative top-5 px-8 bg-neutral-200 dark:text-[#E5E5E5] duration-300 dark:bg-[#1A1A1A] " >المپیاد فیزیک</span>
+          <div class="h-px bg-[#80808080]"></div> 
+
+        </div>
+        <div class="flex">
+          <!-- bg-neutral-300 -->
             <aside x-data="visibleNavHighlighter"
-                  x-on:scroll.window.throttle.50ms="onScroll()" class=" fixed pb-2 pt-20 px-8 left-0 bottom-0 top-0 hidden xl:block w-48 w-64 overflow-y-auto dark:bg-[#2b2c2f] dark:text-white bg-neutral-300 transition delay-50 linear duration-300 drop-shadow rounded"  hover-scrollbar dir="rtl" lang="ar">
-                  <ul class="space-y-4 text-gray-700 dark:text-white/50 pt-10 ">
+                  x-on:scroll.window.throttle.50ms="onScroll()" class=" xl:block w-48 w-64 bg-transparent transition delay-50 ml-12 mt-12 linear duration-300 rounded"  hover-scrollbar dir="rtl" lang="ar">
+                  <ul class="space-y-4 text-[#808080] sticky top-[8rem] ">
                       <template x-for="heading in headings" >
-                          <li class="text-sm" :class="if (heading.tagName.toLowerCase() === 'h2') { return 'pr-1' } else if (heading.tagName.toLowerCase() === 'h3') { return 'pr-7' }"
+                          <li class="text-sm " :class="if (heading.tagName.toLowerCase() === 'h2') { return 'pr-1' } else if (heading.tagName.toLowerCase() === 'h3') { return 'pr-7' }"
                           >
                               <a
                                   :href="'#'+heading.id"
                                   class="hover:drop-shadow-lg"
-                                  :class="toggleActive && visibleHeadingId == heading.id && ' text-white  transition-all duration-500 drop-shadow-lg bg-gray-700 rounded-full py-2 px-4 drop-shadow-lg' || visibleHeadingId == heading.id && ' text-gray-900  transition-all duration-500 bg-gray-400 rounded-full py-2 px-4 drop-shadow-lg'"
+                                  :class="toggleActive && visibleHeadingId == heading.id && ' text-gray-900  transition-all duration-500 drop-shadow-lg bg-gray-400 rounded-[15px] py-2 px-4 drop-shadow-lg' || visibleHeadingId == heading.id && ' text-gray-900  transition-all duration-500 bg-gray-400 rounded-[15px] py-2 px-4 drop-shadow-lg'"
                                   x-text=" '● ' + heading.innerText"+
                               ></a>
                           </li>
                       </template>
                   </ul> 
             </aside>
-            <div class="left-0 bottom-0 xl:block w-64 hidden mr-40">
-            </div>
-            <section class="bg-neutral-200 flex flex-col space-y-5 px-5 py-20 lg:px-60 md:px-40 dark:bg-[#22303C] transition dark:text-gray-300 duration-300 ease-in-out" dir="rtl" lang="ar">
-
-                <div class="text-center">
-                        <span class="font-extrabold text-4xl relative top-5 px-8 bg-neutral-200 dark:bg-[#22303C] transition delay-160 duration-300" >المپیاد فیزیک</span>
-                        <div class="h-px bg-gray-600 dark:bg-gray-300"></div> 
-
-                </div>
+            <section class="flex flex-col justify-self-start space-y-5  transition dark:text-[#E5E5E5] duration-300 " dir="rtl" lang="ar">
                 
                 <h2 class="font-extrabold text-3xl pt-10" >المپیاد فیزیک چیست؟</h2>
                 <p>نزدیک به چهل سال از نخستین مسابقات المپیاد کشوری میگذرد. با وجود محبوبیت یافتن این مسابقات در میان تمام اقشار دانش آموزی، همچنان کمبود منابع معتبر آموزشی خصوصا درمیان طبقات محروم جامعه به چشم می آید. لذا، اکثریت مدال آوران المپیاد در دهه های گذشته را دانش آموزان استان های بزرگ کشوری تشکیل داده اند. در این راستا، گروه ببعییی تلاش کرده است تا با در اختیار قرار دادن آموزش های رایگان، دانش آموزان دبیرستانی از تمامی اقشار اجتماعی و اقتصادی را با مراجع به روز المپیادهای کشوری آشنا سازد. گروه ببعییی با فراهم کردن فیلم و انیمیشن های آموزشی و مشاوره ای، بخش های تعاملی و تمرین های درسی سعی براین دارد که شعله اشتیاق یادگیری را درمیان دانش آموزان مستعد برافروزد، از پیچیدگی های مسیر المپیاد بکاهد و تنوع فرهنگی را در جامعه المپیاد توسعه دهد.</p>
@@ -142,7 +140,7 @@
                 <h3 class="font-medium text-3xl pt-6">مرحله دوم</h3>
                 <p>نزدیک به چهل سال از نخستین مسابقات المپیاد کشوری میگذرد.
                 </p>
-                <button class="bg-black dark:bg-white dark:text-black dark:hover:text-black dark:bg-gray-300 transition ease-in-out hover:scale-110 duration-300 text-gray-200 hover:text-white rounded-full py-2 px-4 hover:drop-shadow-lg ml-auto">
+                <button class="bg-[#616161] dark:bg-[#D4D4D4] dark:text-black dark:hover:text-[#D4D4D4] dark:hover:border-[#D4D4D4] transition ease-in-out duration-300 text-white hover:text-[#616161] dark:hover:bg-transparent hover:bg-transparent border border-transparent hover:border hover:border-[#616161] rounded-[15px] py-2 px-4 hover:drop-shadow-lg ml-auto">
                     <p class="p-0.5">آموزش مرحله دوم</p>
                 </button>
                 <h3 class="font-medium text-3xl pt-6">مرحله سوم</h3>
