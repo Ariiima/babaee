@@ -107,53 +107,61 @@
 
           
         </nav>
-        <div class="text-center mt-14 px-20 pb-10 max-w-7xl mx-auto">
-          <span class="font-extrabold text-4xl transition relative top-5 px-8 bg-neutral-200 dark:text-[#E5E5E5] duration-300 dark:bg-[#1A1A1A] " >المپیاد فیزیک</span>
-          <div class="h-px bg-[#80808080]"></div> 
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mt-14 px-20 pb-10 ">
+            <span class="font-extrabold text-4xl transition relative top-5 px-8 bg-neutral-200 dark:text-[#E5E5E5] duration-300 dark:bg-[#1A1A1A] " >المپیاد فیزیک</span>
+            <div class="h-px bg-[#80808080]"></div> 
 
-        </div>
-        <div class="flex mx-[12rem]">
-          <!-- bg-neutral-300 -->
-            <aside x-data="visibleNavHighlighter"
-                  x-on:scroll.window.throttle.50ms="onScroll()" class=" xl:block bg-transparent transition delay-50 mt-12 linear duration-300 rounded"  hover-scrollbar dir="rtl" lang="ar">
-                  <ul class="space-y-4 text-[#808080] sticky top-[8rem] ">
-                      <template x-for="heading in headings" >
-                          <li class="text-sm " :class="if (heading.tagName.toLowerCase() === 'h2') { return 'pr-1' } else if (heading.tagName.toLowerCase() === 'h3') { return 'pr-7' }"
-                          >
-                              <a
-                                  :href="'#'+heading.id"
-                                  class="hover:drop-shadow-lg"
-                                  :class="toggleActive && visibleHeadingId == heading.id && ' text-gray-900  transition-all duration-500 drop-shadow-lg bg-gray-400 rounded-[15px] py-2 px-4 drop-shadow-lg' || visibleHeadingId == heading.id && ' text-gray-900  transition-all duration-500 bg-gray-400 rounded-[15px] py-2 px-4 drop-shadow-lg'"
-                                  x-text=" '● ' + heading.innerText"+
-                              ></a>
-                          </li>
-                      </template>
-                  </ul> 
-            </aside>
-            <section class="flex flex-col justify-items-start flex-1 space-y-5  transition dark:text-[#E5E5E5] duration-300 " dir="rtl" lang="ar">
-                
-                <h2 class="font-extrabold text-3xl pt-10" >المپیاد فیزیک چیست؟</h2>
-                <p>نزدیک به چهل سال از نخستین مسابقات المپیاد کشوری میگذرد. با وجود محبوبیت یافتن این مسابقات در میان تمام اقشار دانش آموزی، همچنان کمبود منابع معتبر آموزشی خصوصا درمیان طبقات محروم جامعه به چشم می آید. لذا، اکثریت مدال آوران المپیاد در دهه های گذشته را دانش آموزان استان های بزرگ کشوری تشکیل داده اند. در این راستا، گروه ببعییی تلاش کرده است تا با در اختیار قرار دادن آموزش های رایگان، دانش آموزان دبیرستانی از تمامی اقشار اجتماعی و اقتصادی را با مراجع به روز المپیادهای کشوری آشنا سازد. گروه ببعییی با فراهم کردن فیلم و انیمیشن های آموزشی و مشاوره ای، بخش های تعاملی و تمرین های درسی سعی براین دارد که شعله اشتیاق یادگیری را درمیان دانش آموزان مستعد برافروزد، از پیچیدگی های مسیر المپیاد بکاهد و تنوع فرهنگی را در جامعه المپیاد توسعه دهد.</p>
-                <h2 class="font-extrabold text-3xl pt-10" >مراحل</h2>
-                <h3 class="font-medium text-3xl pt-6" >مرحله اول</h3>
-                <p>نزدیک به چهل سال از نخستین مسابقات المپیاد کشوری میگذرد. با وجود محبوبیت یافتن این مسابقات در میان تمام اقشار دانش آموزی، همچنان کمبود منابع معتبر آموزشی خصوصا درمیان طبقات محروم جامعه به چشم می آید. لذا، اکثریت مدال آوران المپیاد در دهه های گذشته را دانش آموزان استان های بزرگ کشوری تشکیل داده اند. در این راستا، گروه ببعییی تلاش کرده است تا با در اختیار قرار دادن آموزش های رایگان، دانش آموزان دبیرستانی از تمامی اقشار اجتماعی و اقتصادی را با مراجع به روز المپیادهای کشوری آشنا سازد.</p>
-                <h3 class="font-medium text-3xl pt-6">مرحله دوم</h3>
-                <p>نزدیک به چهل سال از نخستین مسابقات المپیاد کشوری میگذرد.
-                </p>
-                <button class="bg-[#616161] dark:bg-[#D4D4D4] dark:text-black dark:hover:text-[#D4D4D4] dark:hover:border-[#D4D4D4] transition ease-in-out duration-300 text-white hover:text-[#616161] dark:hover:bg-transparent hover:bg-transparent border border-transparent hover:border hover:border-[#616161] rounded-[15px] py-2 px-4 hover:drop-shadow-lg ml-auto">
-                    <p class="p-0.5">آموزش مرحله دوم</p>
-                </button>
-                <h3 class="font-medium text-3xl pt-6">مرحله سوم</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.</p>
-                <h3 class="font-medium text-3xl pt-6" >مرحله چهارم (دوره تابستانه)</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.</p>
-            </section>
+          </div>
+          <div class="mx-[12rem]">
+            <!-- bg-neutral-300 -->
+              <aside x-data="visibleNavHighlighter"
+                    x-on:scroll.window.throttle.50ms="onScroll()" class=" xl:block bg-transparent transition delay-50 mt-12 linear duration-300 rounded float-left sticky top-[8rem]"  hover-scrollbar dir="rtl" lang="ar">
+                    <ul x-data="{visibleH2 : 'hi'} " class=" text-[#808080]">
+                        <template x-for="heading in headings" >
+                            <li class="text-sm py-2" :class="if (heading.tagName.toLowerCase() === 'h2') { return 'pr-1' } else if (heading.tagName.toLowerCase() === 'h3') { return 'pt-3 pr-7' }" 
+                             @foo="{  }">
+                                <a
+                                    :href="'#'+heading.id"
+                                    class="py-[11px] pr-1 border-r-2"
+                                    :class="if (toggleActive && visibleHeadingId == heading.id) { return ' text-gray-900' } else if  (heading.tagName.toLowerCase() === 'h3' && visibleHeadingId == heading.id) { return ' text-gray-900 border-black '} if (heading.tagName.toLowerCase() === 'h3' ){ return 'border-gray-400'} if (heading.id == visibleHeadingTag ) {return 'text-black' }"
+                                    
+                                    x-text="heading.innerText"
+                                >
+                                
+
+                              </a>
+                              <!-- <div class="ml-2 float-right w-[2px] h-6" :class="visibleHeadingId == heading.id ? ' bg-black ' : 'bg-gray-300' "></div> -->
+                            </li>
+                        </template>
+                    </ul> 
+              </aside>
+              <section class="flex flex-col justify-items-start flex-1 space-y-5  transition dark:text-[#E5E5E5] duration-300 " dir="rtl" lang="ar">
+                  
+                  <h2 class="font-extrabold text-3xl pt-10" >المپیاد فیزیک چیست؟</h2>
+                  <p>نزدیک به چهل سال از نخستین مسابقات المپیاد کشوری میگذرد. با وجود محبوبیت یافتن این مسابقات در میان تمام اقشار دانش آموزی، همچنان کمبود منابع معتبر آموزشی خصوصا درمیان طبقات محروم جامعه به چشم می آید. لذا، اکثریت مدال آوران المپیاد در دهه های گذشته را دانش آموزان استان های بزرگ کشوری تشکیل داده اند. در این راستا، گروه ببعییی تلاش کرده است تا با در اختیار قرار دادن آموزش های رایگان، دانش آموزان دبیرستانی از تمامی اقشار اجتماعی و اقتصادی را با مراجع به روز المپیادهای کشوری آشنا سازد. گروه ببعییی با فراهم کردن فیلم و انیمیشن های آموزشی و مشاوره ای، بخش های تعاملی و تمرین های درسی سعی براین دارد که شعله اشتیاق یادگیری را درمیان دانش آموزان مستعد برافروزد، از پیچیدگی های مسیر المپیاد بکاهد و تنوع فرهنگی را در جامعه المپیاد توسعه دهد.</p>
+                  <h2 class="font-extrabold text-3xl pt-10" >مراحل</h2>
+                  <h3 class="font-medium text-3xl pt-6" >مرحله اول</h3>
+                  <p>نزدیک به چهل سال از نخستین مسابقات المپیاد کشوری میگذرد. با وجود محبوبیت یافتن این مسابقات در میان تمام اقشار دانش آموزی، همچنان کمبود منابع معتبر آموزشی خصوصا درمیان طبقات محروم جامعه به چشم می آید. لذا، اکثریت مدال آوران المپیاد در دهه های گذشته را دانش آموزان استان های بزرگ کشوری تشکیل داده اند. در این راستا، گروه ببعییی تلاش کرده است تا با در اختیار قرار دادن آموزش های رایگان، دانش آموزان دبیرستانی از تمامی اقشار اجتماعی و اقتصادی را با مراجع به روز المپیادهای کشوری آشنا سازد.</p>
+                  <h3 class="font-medium text-3xl pt-6">مرحله دوم</h3>
+                  <p>نزدیک به چهل سال از نخستین مسابقات المپیاد کشوری میگذرد.
+                  </p>
+                  <button class="bg-[#616161] dark:bg-[#D4D4D4] dark:text-black dark:hover:text-[#D4D4D4] dark:hover:border-[#D4D4D4] transition ease-in-out duration-300 text-white hover:text-[#616161] dark:hover:bg-transparent hover:bg-transparent border border-transparent hover:border hover:border-[#616161] rounded-[15px] py-2 px-4 hover:drop-shadow-lg ml-auto">
+                      <p class="p-0.5">آموزش مرحله دوم</p>
+                  </button>
+                  <h3 class="font-medium text-3xl pt-6">مرحله سوم</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.</p>
+                  <h3 class="font-medium text-3xl pt-6" >مرحله چهارم (دوره تابستانه)</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.</p>
+              </section>
+            
+          </div>
           
         </div>
         <script>
@@ -161,6 +169,7 @@
               Alpine.data('visibleNavHighlighter', () => ({
                   headings: undefined,
                   visibleHeadingId: null,
+                  visibleHeadingTag: null,
 
                   init() {
                       // Grab all the headings inside the main container.
@@ -204,6 +213,8 @@
 
                       // Otherwise, highlight that heading.
                       this.visibleHeadingId = headingsByDistanceFromTop[closestNegativeTop].id
+                      if (headingsByDistanceFromTop[closestNegativeTop].tagName == "H2")
+                      this.visibleHeadingTag = headingsByDistanceFromTop[closestNegativeTop].id;
                   },
               }))
           })
