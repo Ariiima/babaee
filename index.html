@@ -11,7 +11,7 @@
 
     </head>
     <body  x-data="{toggleActive : $persist(false)} " :class=" toggleActive ? 'dark' : '' " >
-      <div class="dark:bg-[#1A1A1A] bg-[#E5E5E5] pb-[20rem] transition duration-300">
+      <div class="dark:bg-[#1A1A1A] bg-[#E5E5E5] transition duration-300">
         <nav class="z-50 sticky text-center bg-[#353535]" x-data="{ show: false }" >
           <div class="center w-auto mx-auto px-2 sm:px-6 sm:pl-10 ">
             <div class="relative flex items-center justify-between h-16">
@@ -125,7 +125,7 @@
                                     :href="'#'+heading.id"
                                     class="py-[11px] border-r-2 border-gray-400 transition duration-200"
                                     :class="if (toggleActive && visibleHeadingId == heading.id) { return 'pr-2 text-gray-900' } else if  (heading.tagName.toLowerCase() === 'h3' && visibleHeadingId == heading.id) { return ' text-gray-900 border-black pr-6'};
-                                     if (heading.id == visibleHeadingTag ) {return 'text-black border-black pr-2' };
+                                     if (heading.id == visibleHeadingTag ) {return 'text-black border-[#FF5E5E] pr-2' };
                                      if (heading.tagName.toLowerCase() === 'h2' ){return 'border-gray-400 pr-2'}
                                      if (heading.tagName.toLowerCase() === 'h3' ){ return 'border-gray-400 pr-6'}
                                      "
@@ -140,7 +140,7 @@
                         </template>
                     </ul> 
               </aside>
-              <section class="flex flex-col justify-items-start flex-1 space-y-5  transition dark:text-[#E5E5E5] duration-300 " dir="rtl" lang="ar">
+              <section class="flex flex-col justify-items-start flex-1 space-y-5  transition dark:text-[#E5E5E5] duration-300 pb-[20rem] " dir="rtl" lang="ar">
                   
                   <h2 class="font-extrabold text-3xl pt-10" >المپیاد فیزیک چیست؟</h2>
                   <p>نزدیک به چهل سال از نخستین مسابقات المپیاد کشوری میگذرد. با وجود محبوبیت یافتن این مسابقات در میان تمام اقشار دانش آموزی، همچنان کمبود منابع معتبر آموزشی خصوصا درمیان طبقات محروم جامعه به چشم می آید. لذا، اکثریت مدال آوران المپیاد در دهه های گذشته را دانش آموزان استان های بزرگ کشوری تشکیل داده اند. در این راستا، گروه ببعییی تلاش کرده است تا با در اختیار قرار دادن آموزش های رایگان، دانش آموزان دبیرستانی از تمامی اقشار اجتماعی و اقتصادی را با مراجع به روز المپیادهای کشوری آشنا سازد. گروه ببعییی با فراهم کردن فیلم و انیمیشن های آموزشی و مشاوره ای، بخش های تعاملی و تمرین های درسی سعی براین دارد که شعله اشتیاق یادگیری را درمیان دانش آموزان مستعد برافروزد، از پیچیدگی های مسیر المپیاد بکاهد و تنوع فرهنگی را در جامعه المپیاد توسعه دهد.</p>
