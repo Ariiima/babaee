@@ -10,7 +10,7 @@
 
 
     </head>
-    <body  x-data="{toggleActive : $persist(false)} " :class=" toggleActive ? 'dark' : '' " >
+    <body  x-data="{toggleActive : $persist(false)} " :class=" toggleActive ? 'dark' : '' " class="overflow-x-clip">
       <div class="dark:bg-[#1A1A1A] bg-[#E5E5E5] transition duration-300">
         <nav class="z-50 sticky text-center bg-[#353535]" x-data="{ show: false }" >
           <div class="center w-auto mx-auto px-2 sm:px-6 sm:pl-10 ">
@@ -60,15 +60,15 @@
                 </div>
                 <div class="hidden sm:block w-auto py-1 h-12 mx-auto pr-4">
                   
-                  <div class="flex justify-center text-xs font-semibold lg:space-x-2 sm:space-x-1 sm:text-xs text-[#E5E5E5]" id="wrapper" x-data="{ mouseOver: false }" >
+                  <div class="flex justify-center text-xs font-semibold lg:space-x-2 sm:space-x-1 sm:text-sm text-[#E5E5E5]" id="wrapper" x-data="{ mouseOver: false }" >
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="#" class="px-2 py-3 hover:text-white transition ease-in-out hover:scale-110 duration-300" @mouseover=" mouseOver = true " @mouseout=" mouseOver = false " :class=" mouseOver && 'text-[#808080]'">المپیاد  کامپیوتر</a>
+                    <a href="#" class="px-2 py-3 hover:text-white transition ease-in-out  duration-300" @mouseover=" mouseOver = true " @mouseout=" mouseOver = false " :class=" mouseOver && 'text-[#808080]'">المپیاد  کامپیوتر</a>
 
-                    <a href="#" class="px-2 py-3 hover:text-white transition ease-in-out hover:scale-110 duration-300" @mouseover=" mouseOver = true " @mouseout=" mouseOver = false " :class=" mouseOver && 'text-[#808080]'">المپیاد ریاضی</a>
+                    <a href="#" class="px-2 py-3 hover:text-white transition ease-in-out  duration-300" @mouseover=" mouseOver = true " @mouseout=" mouseOver = false " :class=" mouseOver && 'text-[#808080]'">المپیاد ریاضی</a>
 
-                    <a href="#" class="text-sm px-2 py-3 pb-[18px] border-b-2 border-[#ff5c5d] " >المپیاد فیزیک</a>
+                    <a href="#" class=" px-2 py-3 pb-[18px] border-b-2 border-[#ff5c5d] " >المپیاد فیزیک</a>
 
-                    <a href="#" class="px-2 py-3 hover:text-white transition ease-in-out hover:scale-110 duration-300" @mouseover=" mouseOver = true " @mouseout=" mouseOver = false " :class=" mouseOver && 'text-[#808080]'">خانه</a>
+                    <a href="#" class="px-2 py-3 hover:text-white transition ease-in-out  duration-300" @mouseover=" mouseOver = true " @mouseout=" mouseOver = false " :class=" mouseOver && 'text-[#808080]'">خانه</a>
                   </div>
                 </div>
 
@@ -108,24 +108,25 @@
           
         </nav>
         <div class="max-w-7xl mx-auto">
-          <div class="text-center mt-14 px-20 pb-10 ">
+          <div class="text-center mt-14 px-10 pb-10 ">
             <span class="font-extrabold text-4xl transition relative top-5 px-8 bg-neutral-200 dark:text-[#E5E5E5] duration-300 dark:bg-[#1A1A1A] " >المپیاد فیزیک</span>
             <div class="h-px bg-[#80808080]"></div> 
 
           </div>
-          <div class="mx-[12rem]">
+          <div class="px-10">
             <!-- bg-neutral-300 -->
               <aside x-data="visibleNavHighlighter"
-                    x-on:scroll.window.throttle.50ms="onScroll()" class=" xl:block bg-transparent transition delay-50 mt-12 linear duration-300 rounded float-left sticky top-[8rem]"  hover-scrollbar dir="rtl" lang="ar">
+                    x-on:scroll.window.throttle.50ms="onScroll()" class=" hidden xl:block ml-20 bg-transparent transition delay-50 mt-12 linear duration-300 rounded float-left sticky top-[8rem]"  hover-scrollbar dir="rtl" lang="ar">
                     <ul x-data="{visibleH2 : 'hi'} " class=" text-[#808080]">
                         <template x-for="heading in headings" >
                             <li class="text-sm py-2" :class="if (heading.tagName.toLowerCase() === 'h2') { return 'pr-1' } else if (heading.tagName.toLowerCase() === 'h3') { return 'pt-3 pr-1' }" 
                              @foo="{  }">
                                 <a
                                     :href="'#'+heading.id"
-                                    class="py-[11px] border-r-2 border-gray-400 transition duration-200"
-                                    :class="if (toggleActive && visibleHeadingId == heading.id) { return 'pr-2 text-gray-900' } else if  (heading.tagName.toLowerCase() === 'h3' && visibleHeadingId == heading.id) { return ' text-gray-900 border-black pr-6'};
-                                     if (heading.id == visibleHeadingTag ) {return 'text-black border-[#FF5E5E] pr-2' };
+                                    class="py-[11px] border-r-2 border-[#B3B3B3] transition duration-200"
+                                    :class="if (toggleActive && visibleHeadingId == heading.id && heading.tagName == 'H3') { return 'pr-6 text-[#E5E5E5] border-[#E5E5E5]' } else if  (heading.tagName.toLowerCase() === 'h3' && visibleHeadingId == heading.id) { return ' text-gray-900 border-black pr-6'};
+                                     if (heading.id == visibleHeadingTag && toggleActive==false) {return 'text-black border-[#FF5E5E] pr-2' };
+                                     if (heading.id == visibleHeadingTag && toggleActive) {return 'text-[#E5E5E5] border-[#FF5E5E] pr-2' };
                                      if (heading.tagName.toLowerCase() === 'h2' ){return 'border-gray-400 pr-2'}
                                      if (heading.tagName.toLowerCase() === 'h3' ){ return 'border-gray-400 pr-6'}
                                      "
@@ -140,7 +141,7 @@
                         </template>
                     </ul> 
               </aside>
-              <section class="flex flex-col justify-items-start flex-1 space-y-5  transition dark:text-[#E5E5E5] duration-300 pb-[20rem] " dir="rtl" lang="ar">
+              <section class="flex flex-col justify-items-start flex-1 space-y-5 ml-auto mr-20 transition dark:text-[#E5E5E5] duration-300 pb-[20rem]  w-fit" dir="rtl" lang="ar">
                   
                   <h2 class="font-extrabold text-3xl pt-10" >المپیاد فیزیک چیست؟</h2>
                   <p>نزدیک به چهل سال از نخستین مسابقات المپیاد کشوری میگذرد. با وجود محبوبیت یافتن این مسابقات در میان تمام اقشار دانش آموزی، همچنان کمبود منابع معتبر آموزشی خصوصا درمیان طبقات محروم جامعه به چشم می آید. لذا، اکثریت مدال آوران المپیاد در دهه های گذشته را دانش آموزان استان های بزرگ کشوری تشکیل داده اند. در این راستا، گروه ببعییی تلاش کرده است تا با در اختیار قرار دادن آموزش های رایگان، دانش آموزان دبیرستانی از تمامی اقشار اجتماعی و اقتصادی را با مراجع به روز المپیادهای کشوری آشنا سازد. گروه ببعییی با فراهم کردن فیلم و انیمیشن های آموزشی و مشاوره ای، بخش های تعاملی و تمرین های درسی سعی براین دارد که شعله اشتیاق یادگیری را درمیان دانش آموزان مستعد برافروزد، از پیچیدگی های مسیر المپیاد بکاهد و تنوع فرهنگی را در جامعه المپیاد توسعه دهد.</p>
